@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                window.onbeforeunload = function() { ws = null }
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link');
+                    for (var i = 0; i < links.length;i++) {
+                    var link = links[i];
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,'');
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+	<meta charset="utf-8">
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+	<title>Pricelens | Log In</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Dentacoin">
+	<meta name="author" content="Lyudmil Dachev">
+	<!-- Le styles -->
+	<link href="css/main.css" rel="stylesheet">
+	<!-- <link rel="stylesheet" type="text/css" href="slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"> -->
+</head>
+
+<body class="Site">
+	<main class="Site-content">
+<nav class="container-fluid">
+
+    <div class="row">
+        <div class="col col--2-of-12 col col--m-1-of-2 col col--s-1-of-2">
+          <a href="index.html" class="current-parent logo">Go Home</a>
+        </div>
+        <div class="col col--10-of-12 col col--m-1-of-2 col col--s-1-of-2">
+    			<ul>
+    				<li class="current hideonphone"><a class='current' href="login.html">Register</a></li>
+    				<li class="current hideonphone"><a class='current' href="login.html">Log In</a></li>
+            <!-- Use any element to open the sidenav -->
+            <li><span class="hamburger" onclick="openNav()">&#9776;</span></li>
+    			</ul>
+        </div>
+  	</div>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">Buy DCN</a>
+      <a href="#">Wallet</a>
+      <a href="#">Blog</a>
+      <a href="#">Team</a>
+      <a href="#">White paper</a>
+      <a href="#">DCN press center</a>
+      <a href="#">Log in</a>
+      <a href="#">Register</a>
+    </div>
+
+</nav>
+
+<div class="container">
+	<div class="row">
+		<div class="col col--12-of-12">
+			<div class="spacetwo"></div>
+			<h2>Log In:</h2>
+				<form class="narrow">
+					<!-- <label for="contact-name">Username:</label> -->
+					<input type="text" name="name" placeholder="username" required><br>
+					<!-- <label for="password">Password:</label> -->
+					<input type="password" name="psw" placeholder="password" required><br>
+					<button class="submit" type="submit" value="Log In">Log In</button>
+					<a href="#" class="flinks colorblue center_txt">Forgotten Password</a>
+				</form>
+		</div>
+	</div>
+	<div class="space"></div>
+	<div class="row">
+		<div class="col col--12-of-12">
+			<h6 class="center_txt">Don't Have an Acount?</h6>
+				<p class="center_txt"><a href="demo.html" class="ilinks">Request a Demo</a></p>
+	</div>
+	</div>
+</div>
+
+
+</main>
+<footer class="container contentwrap">
+	<div class="row">
+		<div class="col col--12-of-12">
+			<a href="index.html" class="current-parent logo_footer centerlogo">Go Home</a>
+		</div>
+	</div>
+
+	
+<div class="row">
+  <div class="col col--12-of-12">
+		<ul class="align fnav">
+			<li class='current-parent'><a class='current-parent' href="index.html">DCN Press Center</a></li>
+			<li><a href="demo.html">Team</a></li>
+      <li><a href="about.html">Whitepaper</a></li>
+      <li><a href="about.html">Blog</a></li>
+      <li><a href="about.html">Buy DCN</a></li>
+      <li><a href="about.html">Waller</a></li>
+      <li><a href="about.html">Register</a></li>
+      <li><a href="about.html">Log In</a></li>
+		</ul>
+  </div>
+</div>
+
+	<div class="row">
+  <div class="col col--12-of-12 centericons">
+    <a class="social-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.12 20" class="svg-icon"><title>Mail</title><path class="cls-1" d="M27.81,1.11a2.79,2.79,0,0,0-.44.32Q21.6,7.18,15.85,12.94a2.33,2.33,0,0,1-3.56,0L.74,1.41A2.69,2.69,0,0,0,.3,1.15,2.46,2.46,0,0,1,2.05,0H25.87A2.41,2.41,0,0,1,27.81,1.11Z"/><path class="cls-1" d="M7.16,10l4.09,4.11a3.84,3.84,0,0,0,5.62,0l4-4c.14.13.26.23.37.35,2.18,2.17,4.34,4.35,6.53,6.5a1.1,1.1,0,0,1,.34,1,2.32,2.32,0,0,1-2.2,2c-1.12,0-2.24,0-3.36,0H2.49A2.31,2.31,0,0,1,.05,18.13a1.25,1.25,0,0,1,.37-1.3c2.16-2.11,4.29-4.26,6.42-6.41A2.79,2.79,0,0,0,7.16,10Z"/><path class="cls-1" d="M28.12,15.05,22,9a3.31,3.31,0,0,1,.23-.26c1.54-1.54,3.08-3.07,4.62-4.62.24-.25.49-.47.86-.32s.38.5.38.84V15.05Z"/>
+      <path d="M6.07,8.94,0,15a2.72,2.72,0,0,1,0-.31V4.55c0-.33,0-.65.38-.79s.6.06.84.29q2.3,2.33,4.61,4.63A2.62,2.62,0,0,1,6.07,8.94Z"/></svg>
+    </a>
+
+    <a class="social-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon"><title>Facebook</title><path class="cls-1" d="M24,1.27V22.76s0,.08,0,.12A1.27,1.27,0,0,1,22.88,24l-.12,0H16.58V14.71h2.93c.19,0,.19,0,.21-.19.06-.51.13-1,.19-1.51l.24-1.8c0-.14,0-.14-.13-.14H16.59s0-.05,0-.07c0-.77,0-1.53,0-2.29a2.65,2.65,0,0,1,.07-.63,1.1,1.1,0,0,1,.9-1A3.79,3.79,0,0,1,18.37,7c.6,0,1.2,0,1.8,0,.1,0,.12,0,.12-.13V3.85c0-.08,0-.11-.11-.12s-.29,0-.44,0l-2.36-.08a5.2,5.2,0,0,0-2,.38,3.93,3.93,0,0,0-2.1,2,5.22,5.22,0,0,0-.49,2.17c0,.93,0,1.87,0,2.8v.11h-3c-.1,0-.13,0-.13.13,0,1.12,0,2.25,0,3.38,0,.13,0,.13.14.13h3V24H1.24l-.12,0A1.27,1.27,0,0,1,0,22.89c0-.06,0-.1,0-.15V1.27c0-.05,0-.1,0-.15A1.29,1.29,0,0,1,1.12,0l.15,0H22.74l.14,0A1.28,1.28,0,0,1,24,1.12S24,1.22,24,1.27Z"/></svg>
+    </a>
+
+    <a class="social-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.61 20" class="svg-icon"><title>Twitter</title><path class="cls-1" d="M24.61,2.37a10.12,10.12,0,0,1-2.9.79A5.06,5.06,0,0,0,23.93.37a10,10,0,0,1-3.21,1.22A5.05,5.05,0,0,0,12,5.05a4.89,4.89,0,0,0,.13,1.15A14.32,14.32,0,0,1,1.71.92,5.07,5.07,0,0,0,3.28,7.67,5.06,5.06,0,0,1,1,7V7.1a5.06,5.06,0,0,0,4.05,5,5.33,5.33,0,0,1-1.33.17,4.94,4.94,0,0,1-1-.09,5.05,5.05,0,0,0,4.72,3.51A10.18,10.18,0,0,1,1.2,17.8,9.55,9.55,0,0,1,0,17.73,14.31,14.31,0,0,0,7.74,20,14.27,14.27,0,0,0,22.11,5.63c0-.21,0-.43,0-.65A10.25,10.25,0,0,0,24.61,2.37Z"/></svg>
+    </a>
+
+    <a class="social-link" href="#"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+       viewBox="0 0 24 24" class="svg-icon">
+    <title>Ryver</title>
+
+      <path class="st0" d="M21.9,0H13c2,0.4,7,1.6,7,4.1c0,3.1-8,6.5-8.2,11.1c0,0.7,0,1.4,0.2,2c0.1,0.2,0.2,0.4,0.2,0.6
+        c1,2.4,3.8,4.3,8.2,5.8c0.4,0.1,0.8,0.2,1.2,0.4h0.2c0,0,0,0,0,0c1.2,0,2.1-1,2.1-2.2V2.2C24,1,23.1,0,21.9,0z"/>
+      <path class="st0" d="M12.8,7.1c1-0.4,2-1,3-1.5c0.1-0.1,0.2-0.1,0.3-0.2c0.1-0.1,0.2-0.1,0.3-0.2l0.3-0.2c0.1-0.1,0.2-0.2,0.2-0.2
+        L17,4.5c0.1-0.1,0.1-0.2,0.2-0.2c0.2-0.3,0.2-0.7,0.1-1L17.2,3c-0.3-0.5-0.8-0.9-1.3-1.2c-0.1-0.1-0.2-0.2-0.4-0.2
+        c-1.3-0.6-2.6-1.2-4-1.6H2.2c0,0,0,0,0,0C1,0,0,1,0,2.2v19.7c0,0,0,0,0,0C0,23.1,1,24,2.2,24h3c-0.2-0.2-0.5-0.4-0.7-0.7L4.3,23
+        c-0.3-0.4-0.6-0.8-0.9-1.3c-1.1-2-1.3-4.3-0.5-6.4C4.4,10.7,9.5,8.6,12.8,7.1z"/>
+
+    </svg>
+
+    </a>
+
+
+    <a class="social-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.65 24" class="svg-icon"><title>Github</title><path class="cls-1" d="M24.65,12.33A12.33,12.33,0,1,0,8.32,24,1.21,1.21,0,0,0,9,23.07c0-.68,0-2.42,0-2.42a8.74,8.74,0,0,1-1.3.09,2.77,2.77,0,0,1-2.82-1.91,3.33,3.33,0,0,0-1.39-1.64c-.32-.2-.39-.45,0-.52,1.7-.31,2.14,1.93,3.27,2.28a3.16,3.16,0,0,0,2.38-.19,2.43,2.43,0,0,1,1-1.58c-2.9-.28-4.61-1.28-5.5-2.89l-.1-.18-.22-.51-.07-.18a8.58,8.58,0,0,1-.4-2.79A4.77,4.77,0,0,1,5.11,7.09a4.91,4.91,0,0,1,.21-3.55S6.58,3.28,8.94,5a13.32,13.32,0,0,1,6.33-.12c1-.65,2.81-1.58,3.54-1.32.2.32.62,1.25.26,3.28a5.76,5.76,0,0,1,1.55,4.09,11.08,11.08,0,0,1-.32,2.53l-.11.37s-.06.17-.13.33L20,14.3c-.86,1.87-2.62,2.57-5.47,2.87.92.57,1.19,1.3,1.19,3.26s0,2.22,0,2.67a1.22,1.22,0,0,0,.61.9A12.32,12.32,0,0,0,24.65,12.33Z"/></svg>
+    </a>
+
+    <a class="social-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.68 24" class="svg-icon"><title>Steemit</title><path class="cls-1" d="M3.25,2.58C3,2.47,0,5,0,6.79,0,9.29,3.52,15,4.11,17.16c.51,1.89-.87,4.15-.49,4.25s3.63-3.1,3.76-4.52c.16-2.26-3.84-8.84-4.16-10.54-.36-2,.3-3.72,0-3.77Z"/><path class="cls-1" d="M10.78,0c-.3-.16-4.15,3-4.15,5.35,0,3.19,4.48,10.43,5.24,13.22.65,2.4-1.1,5.28-.62,5.41.44.28,4.62-4,4.79-5.76C16.25,15.35,11.15,7,10.74,4.8c-.47-2.53.37-4.74,0-4.79Z"/><path class="cls-1" d="M18.55,2.58c-.24-.11-3.26,2.38-3.26,4.21,0,2.5,3.52,8.18,4.11,10.37.51,1.89-.86,4.15-.48,4.25s3.63-3.1,3.75-4.52c.17-2.26-3.83-8.84-4.15-10.54-.37-2,.29-3.72,0-3.77Z"/></svg>
+    </a>
+
+    <a class="social-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon"><title>Medium</title><path class="cls-1" d="M0,0V24H24V0ZM19.94,5.69,18.65,6.92a.39.39,0,0,0-.14.36v9.07a.37.37,0,0,0,.14.36L19.91,18v.27H13.59V18l1.3-1.27c.13-.13.13-.16.13-.36V9l-3.62,9.2h-.49L6.69,9v6.16a.85.85,0,0,0,.24.71l1.69,2.06v.27H3.82v-.27l1.69-2.06a.84.84,0,0,0,.22-.71V8a.65.65,0,0,0-.2-.53L4,5.69V5.42H8.7l3.61,7.92,3.17-7.92h4.46Z"/></svg>
+    </a>
+
+    <a class="social-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.44 24" class="svg-icon"><title>Reddit</title><path class="cls-1" d="M14.2,24c-7,0-12.78-3.85-12.78-8.58S7.15,6.85,14.2,6.85,27,10.7,27,15.42,21.24,24,14.2,24Zm0-16.12c-6.48,0-11.75,3.38-11.75,7.54S7.72,23,14.2,23s11.74-3.38,11.74-7.55S20.67,7.88,14.2,7.88Z"/><path class="cls-1" d="M24.11,5.35a2.68,2.68,0,1,1,2.68-2.67A2.68,2.68,0,0,1,24.11,5.35Zm0-4.32a1.65,1.65,0,1,0,1.65,1.65A1.65,1.65,0,0,0,24.11,1Z"/><path class="cls-1" d="M1.69,14.55A3.28,3.28,0,0,1,3.28,8.4a3.25,3.25,0,0,1,2.31,1l-.73.73a2.22,2.22,0,0,0-1.58-.66,2.25,2.25,0,0,0-1.09,4.22Z"/><path class="cls-1" d="M26.75,14.55l-.5-.9a2.25,2.25,0,1,0-2.68-3.56l-.72-.73a3.25,3.25,0,0,1,2.31-1,3.28,3.28,0,0,1,1.59,6.15Z"/><path class="cls-1" d="M8.12,13.91a2,2,0,1,1,2,2A2,2,0,0,1,8.12,13.91Z"/><path class="cls-1" d="M16.53,13.91a2,2,0,1,1,2,2A2,2,0,0,1,16.53,13.91Z"/><path class="cls-1" d="M14.28,7.65A.51.51,0,0,1,13.8,7L16.12.35l5.71,1.37a.5.5,0,0,1,.38.62.52.52,0,0,1-.62.38l-4.8-1.15-2,5.74A.53.53,0,0,1,14.28,7.65Z"/><path class="cls-1" d="M14.17,20.89c-3.28,0-4.59-1.49-4.65-1.56a.51.51,0,0,1,.78-.67s1.13,1.2,3.87,1.2a5.86,5.86,0,0,0,4-1.22.52.52,0,0,1,.73,0,.51.51,0,0,1,0,.72C18.88,19.42,17.44,20.89,14.17,20.89Z"/></svg>
+    </a>
+
+    <a class="social-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.78 20" class="svg-icon"><title>Telegram</title><path class="cls-1" d="M23.78,1.16c-.23,1.14-.48,2.34-.73,3.54q-1.44,6.88-2.87,13.77c0,.11-.07.23-.09.34-.3,1.23-1.1,1.53-2.13.78-1.62-1.17-3.24-2.34-4.83-3.55-.41-.31-.64-.3-1,.08-.71.79-1.47,1.53-2.22,2.27S8.41,19,8.08,18c-.59-1.83-1.2-3.65-1.72-5.5a1.37,1.37,0,0,0-1.09-1.06C3.78,11,2.32,10.53.84,10.1.39,10,0,9.78,0,9.26s.36-.69.76-.85L22.06.12A1.16,1.16,0,0,1,23.78,1.16ZM8.83,16.84c.09-.84.22-1.52.24-2.2a3.3,3.3,0,0,1,1.28-2.58c3-2.56,5.93-5.21,8.89-7.83.16-.14.49-.28.29-.56s-.44,0-.63.09q-5.67,3.53-11.36,7a.83.83,0,0,0-.39,1.14c.41,1.19.75,2.39,1.13,3.58A3.42,3.42,0,0,0,8.83,16.84Z"/></svg>
+    </a>
+
+    <a class="social-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.83 22" class="svg-icon"><title>YouTube</title><path class="cls-1" d="M30,1.32c-.57-.51-1.11-.83-3.27-1C24,0,20.38,0,17.63,0H14.21C11.45,0,7.8,0,5.11.28,3,.49,2.42.81,1.85,1.32.36,2.68.05,6.38,0,10c0,.68,0,1.36,0,2.05,0,3.61.36,7.26,1.84,8.61.57.5,1.1.82,3.26,1,2.69.25,6.34.28,9.1.29h3.42c2.75,0,6.4,0,9.09-.29,2.16-.21,2.7-.53,3.27-1,1.47-1.34,1.79-4.94,1.84-8.53,0-.77,0-1.53,0-2.31C31.78,6.25,31.46,2.65,30,1.32ZM12.81,15.86V6.42l8,4.58Z"/></svg>
+    </a>
+
+  </div>
+</div>
+
+
+	<form class="example" style="margin:auto;max-width:300px">
+	  <input type="text" placeholder="Get DCN updates" name="newsletter">
+	  <button type="Sign Up">Sign Up</button>
+	</form>
+
+		<div class="row">
+			<div class="col col--12-of-12">
+				<p class="copyright">
+					© Dentacoin Foundation. All rights reserved.<br>
+					The Netherlands Chamber of Commerce Business Register extract
+					Wim Duisenbergplantsoen 31 6221 SE Maastricht The Netherlands.
+				</p>
+			</div>
+		</div>
+
+</footer>
+
+<!-- RESPONSIVE NAV -->
+<script type="text/javascript">
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "300px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+</script>
+
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script type="text/javascript">
+window.sr = ScrollReveal();
+sr.reveal('.foo');
+sr.reveal('.bar');
+sr.reveal('.foo', { duration: 1000 });
+</script>
+</body>
+</html>
