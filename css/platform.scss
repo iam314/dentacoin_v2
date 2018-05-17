@@ -8,18 +8,17 @@
   font-smoothing: antialiased;
 }
 
-::selection {
-  background: $color-blueselect;
-}
-
 html {
   font-size: 62.5%;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
-  text-rendering: optimizeLegibility;
-  background-color:#FAF9F6;
+  text-rendering: optimizeLegibility; /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-linear-gradient(#1e5799 0%, #207cca 32%, #2989d8 55%, #207cca 99%);
+  background: -o-linear-gradient(#1e5799 0%, #207cca 32%, #2989d8 55%, #207cca 99%);
+  background: linear-gradient(#1e5799 0%, #207cca 32%, #2989d8 55%, #207cca 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#207cca',GradientType=0 ); /* IE6-9 */
 }
 
 .img-responsive {
@@ -42,7 +41,6 @@ body {
 nav {
 	padding-top: 18px;
   padding-bottom: 28px;
-  background-color: #FAF9F6;
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -473,12 +471,10 @@ p {
 .copyright {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-	font-size: 1.3em;
+	font-size: 1.4em;
   line-height: 155%;
   text-align: center;
-	color: #666666;
-  margin-top: 3.6em;
-  margin-bottom: 3.8em;
+	color: $color-lightgray;
   text-rendering: optimizeLegibility;
 }
 

@@ -42,7 +42,7 @@ $toast-col-groups: (2, 3, 4, 5, 6, 8, 12) !default;
 $toast-gutter-width: 21px !default;
 
 // Breakpoints
-$toast-breakpoint-medium: 667px !default;
+$toast-breakpoint-medium: 683px !default;
 $toast-breakpoint-small: 480px !default;
 
 // Pushes and pulls
@@ -64,16 +64,19 @@ $toast-pulls: false !default;
     display: table; }
   .container:after {
     clear: both; }
-  @media (min-width: 797px) {
+  @media (min-width: 1000px) {
     .container {
-      width: 750px; } }
-  @media (min-width: 1017px) {
+      width: 900px; } }
+  @media (min-width: 1100px) {
     .container {
-      width: 970px; } }
-  @media (min-width: 1218px) {
+      width: 1050px; } }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1100px; } }
+  @media (min-width: 1280px) {
     .container {
       width: 1170px; } }
-  @media (min-width: 1660px) {
+  @media (min-width: 1460px) {
     .container {
       width: 1272px; } }
 .container-fluid {
