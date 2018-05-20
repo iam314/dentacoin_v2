@@ -26,6 +26,7 @@ body {
   max-width: 100%;
   height: auto;
 }
+
 //STICKY FOOOTER
 .Site {
   display: flex;
@@ -41,6 +42,7 @@ body {
 nav {
 	padding-top: 18px;
   padding-bottom: 28px;
+  background-color: #FAF9F6;
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -63,7 +65,6 @@ ul {
 nav ul li {
   display: inline-block;
   margin-right: 2.1em;
-  // padding: 1.2em 0;
 }
 
 nav ul li:last-child {
@@ -205,7 +206,6 @@ nav ul li a:hover {
 
 //FOOTER
 footer {
-  margin-top: 11em;
 }
 
 .logo_footer {
@@ -330,12 +330,11 @@ h2 {
 h3 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 2.8em;
+  font-size: 2.1em;
   text-align: center;
   line-height: 140%;
   text-rendering: optimizeLegibility;
   padding-bottom: 4.8rem;
-  // padding-top: 96px;
   color: $color-black;
 }
 
@@ -429,10 +428,13 @@ p {
 }
 
 .version {
-  background-color: $color-lightgray;
+  // background-color: $color-lightgray;
   box-sizing: border-box;
+  border-bottom: 4px solid $color-black;
   margin-bottom: 2.1rem;
-  padding: 20px 5px;
+  margin-top: 2.1em;
+  padding: 16px 5px;
+  font-size: 1.4em;
   // margin-left: auto;
   // margin-right: auto;
   // -webkit-box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
@@ -465,13 +467,21 @@ p {
 
 .roadmapinfo {
   font-size: 1.6rem;
-  line-height: 130%;
-  // text-align: center;
+  line-height: 150%;
 }
+p.roadmapinfo {
+  // margin-bottom: 1em;
+  padding-bottom: 0;
+}
+
+.roadmapbox > h4 {
+  padding-bottom: 1rem;
+}
+
 .copyright {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-	font-size: 1.4em;
+	font-size: 1.3em;
   line-height: 155%;
   text-align: center;
 	color: $color-lightgray;
@@ -502,7 +512,7 @@ p {
 
 .innerlinks {
   font-weight: 600;
-  color: $color-blue;
+  color: $color-lightgray;
   text-decoration: none;
   text-rendering: optimizeLegibility;
   transition: all 100ms ease-in-out;
@@ -570,16 +580,22 @@ form.example::after {
 
 label {
   font-size: 1.4em;
-  padding-left: 31px;
+  // padding-left: 31px;
 }
 
 //Modal
+.btntxt {
+  vertical-align: bottom;
+  padding-left: 16px;
+}
+
 .modaltitle {
-  font-size: 2.1em;
-  font-weight: 300;
+  font-size: 1.8em;
+  font-weight: 400;
   line-height: 140%;
   color: $color-black;
-  padding-bottom: 36px;
+  text-align: left;
+  padding-bottom: 0;
 }
 /* Center the image and position the close button */
 .imgcontainer {
@@ -587,9 +603,8 @@ label {
 }
 
 .modalcontainer {
-    padding: 60px;
+    padding: 72px 60px 36px 60px;
     border: none;
-    border-radius: 6px;
 }
 
 span.psw {
@@ -609,7 +624,6 @@ span.psw {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 90px;
 }
 
 /* Modal Content/Box */
@@ -617,7 +631,7 @@ span.psw {
     background-color: #FAF9F6;
     margin: 10% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: none;
-    width: 30%; /* Could be more or less, depending on screen size */
+    width: 450px; /* Could be more or less, depending on screen size */
     -webkit-box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
     -moz-box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
     box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
@@ -641,8 +655,7 @@ span.psw {
 }
 
 .btn {
-  width: 70%;
-  padding: 21px;
+  padding: 18px;
   border: none;
   border-radius: 4px;
   margin: 16px auto;
@@ -727,13 +740,10 @@ span.psw {
   h2 {
     font-size: 2.1em;
   }
-  h3 {
-    font-size: 2.1em;
-  }
   h4 {
     font-size: 1.4em;
   }
-  p, .ilinks  {
+  p {
     font-size: 1.6em;
   }
   .infotxt {
@@ -753,7 +763,6 @@ span.psw {
   padding: 10px 10px;
   }
   .copyright {
-    margin-top: 2.8em;
     margin-bottom: .8em;
   }
 }
@@ -771,9 +780,6 @@ span.psw {
   .box {
     margin-top: 130px;
     height: 14em;
-  }
-  .toolsimage {
-    margin-top: -50px;
   }
 }
 
@@ -820,21 +826,30 @@ span.psw {
   h4 {
     font-size: 1.4em;
   }
-  p, .ilinks  {
+  p  {
     font-size: 1.4em;
   }
   .box {
     margin-top: 110px;
     height: 14em;
   }
-  .toolsimage {
-    margin-top: -50px;
-  }
 }
 @media screen and (max-width: 540px) {
   .box {
     margin-top: 90px;
     height: 20em;
+  }
+  .madaltitle {
+    font-size: 1.8em;
+  }
+  .modal {
+    padding-top: 15px;
+  }
+  .modalcontainer {
+      padding: 60px 30px 36px 30px;
+  }
+  .modal-content {
+      width: 95%; /* Could be more or less, depending on screen size */
   }
 }
 
