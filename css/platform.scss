@@ -10,6 +10,7 @@
 
 html {
   font-size: 62.5%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -40,22 +41,20 @@ body {
 
 //NAVIGATION
 nav {
-	padding-top: 18px;
-  padding-bottom: 28px;
-  background-color: #FAF9F6;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-top: 18px;
+  padding-left: 21px;
+  padding-right: 21px;
 }
 
 .logo {
-	background-image: url(img/logo.svg);
+  background-image: url(img/logo_w.svg);
 	background-repeat: no-repeat;
-	height: 36px;
+	height: 16px;
 	width: 141px;
-  margin-top: 3px;
   display: inline-block;
 	cursor: pointer;
   color: rgba(255, 255, 255, 0);
+  margin-top: 7px;
 }
 
 ul {
@@ -64,193 +63,74 @@ ul {
 
 nav ul li {
   display: inline-block;
-  margin-right: 2.1em;
+  margin-right: .8em;
 }
 
 nav ul li:last-child {
 	margin-right: 0;
 }
 
-nav ul li:last-child:hover > a {
-  background-color: #FAF9F6;
-}
-
-nav ul li a {
+nav ul li a  {
 	font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 	font-size: 1.4em;
-	color: $color-black;
+	color: $color-lightgray;
   text-decoration: none;
-  padding: 1.2rem 1.6rem;
   border: none;
   border-radius: 6px;
   transition: all 300ms ease-in-out;
 }
 
-nav ul li a:hover {
-  background-color: darken($color-white, 10%);
-}
-
-// nav ul li:first-child > a {
-//   background-color: $color-blue;
-// }
-
-// nav ul li:first-child:hover > a {
-//   background-color: darken($color-blue, 10%);
-// }
-
-.btnregister {
+.dropbtn {
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.4em;
-  color: $color-black;
-  text-decoration: none;
-  padding: 1.2rem 1.6rem;
+  color: white;
   border: none;
-  margin: 0;
-  border-radius: 6px;
-  background-color: $color-blue;
-  transition: all 300ms ease-in-out;
-}
-
-.btnregister:hover {
-  background-color: darken($color-blue, 10%);
-}
-
-//HAMBURGER
-/* The side navigation menu */
-.hamburger {
   cursor: pointer;
-  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0);
 }
 
-.sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0;
-    right: 0;
-    background-color: $color-black; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-    -webkit-box-shadow: -5px 0px 10px 0px rgba(63,63,63,0.2);
-    -moz-box-shadow: -5px 0px 10px 0px rgba(63,63,63,0.2);
-    box-shadow: -5px 0px 10px 0px rgba(63,63,63,0.2);
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
-/* The navigation menu links */
-.sidenav a, .sidebtnregister {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-	font-size: 1.6em;
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-.sidebtnregister {
-  background-color: $color-black;
-  border: none;
-  margin-left: 0;
-}
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .sidebtnregister:hover{
-    color: #f1f1f1;
-}
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+.dropdown-content {
+    display: none;
     position: absolute;
-    top: 10px;
-    // left: 25px;
-    font-size: 36px;
-    // margin-left: 50px;
-}
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    background-color: $color-lightgray;
+    border-radius: 4px;
+    max-width: 180px;
+    -webkit-box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
+    -moz-box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
+    box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
+    z-index: 1;
 }
 
-//BACKGROUNDS
-.blockchainillustration {
-  background-image: url(img/blockchain_iilustration.svg);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: contain;
+.dropdown-content a {
+    color: black;
+    padding: 12px 10px;
+    text-decoration: none;
+    display: block;
 }
 
-.toolsimage {
-  background-image: url(img/tools.png);
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: contain;
-  margin-top: -90px;
-  margin-bottom: 5.6em;
+.dropdown-content a:hover {background-color: $color-lightgray}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
-.backgroundroadmap {
-  background-color: $color-illustration;
-}
-.space {
-  height: 72px;
-}
-
-.line {
-  background: url(img/line.png);
-  background-repeat: repeat-y;
-  background-position: center;
+.avatar {
+    vertical-align: middle;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
 }
 
-//FOOTER
-footer {
-}
-
-.logo_footer {
-	background-image: url(img/logo_footer.svg);
-	background-repeat: no-repeat;
-	height: 56px;
-	width: 118px;
-  display: inline-block;
-	cursor: pointer;
-  color: rgba(255, 255, 255, 0);
-  display: block;
-  margin: 0 auto 1.6em auto;
-}
-
-.fnav li{
-  display: inline-block;
-  margin-top: 2.6em;
-}
-
-.fnav li a {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-  font-size: 1.6em;
-  color: $color-black;
-  text-decoration: none;
-  border: none;
-  padding: 1.2rem 1.2rem;
-
-  transition: all 300ms ease-in-out;
-}
-
-.fnav li a:hover {
-  color: $color-blue;
-}
-
-.align {
-  float: none;
-  text-align: center;
-}
-
-.social-link {
-  display: inline-block;
-  margin: 1.2rem;
-  color: #b7b7b7;
-  transition: color .3s ease;
+.keepmein {
+  padding-top: 1px;
+  padding-left: 8px;
 }
 
 .svg-icon {
@@ -262,19 +142,9 @@ footer {
   fill: currentColor;
 }
 
-.social-link:hover {
-  color: $color-blue;
-}
-
-.centericons {
-  text-align: center;
-  margin-top: 2.8em;
-  margin-bottom: 1.8em;
-}
-
-.icons {
-  width: 60px;
-  height: 60px;
+.logoicon {
+  width: 84px;
+  height: 84px;
   margin: 3em auto 1.6em auto;
   border-radius: 10px;
   -webkit-box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
@@ -283,91 +153,57 @@ footer {
   transition: all 300ms ease-in-out;
 }
 
-#video {
+.icons {
+  width: 100px;
+  height: 100px;
+  margin: 3em auto 1.6em auto;
+  border-radius: 10px;
   -webkit-box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
   -moz-box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
   box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
+  transition: all 300ms ease-in-out;
 }
 
 .contentwrap {
-  margin-top: 16em;
+  margin-top: 15vh;
 }
 
-.introduction {
-  width: 65%;
-  padding-top: 2.1rem;
-  margin-top: 9em;
-}
-
-.introvideo {
-  width: 65%;
-  padding-bottom: 11em;
+.loginbtns {
+  display: flex;
+  justify-content: center;
 }
 
 //TYPOGRAPHIE
 h1 {
   font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
-  font-size: 3.6em;
+  font-weight: 400;
+  font-size: 1.8em;
   line-height: 100%;
-  text-align: left;
+  text-align: center;
   text-rendering: optimizeLegibility;
-  padding-bottom: 2.8rem;
-  color: $color-black;
+  padding-bottom: 1.2rem;
+  color: $color-lightgray;
 }
 
 h2 {
   font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
-  font-size: 2.8em;
-  line-height: 110%;
+  font-weight: 400;
+  font-size: 1.6em;
+  line-height: 0;
   text-align: center;
   text-rendering: optimizeLegibility;
-  padding-bottom: 1.8rem;
-  color: $color-black;
+  color: $color-lightgray;
 }
 
 h3 {
   font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  font-size: 2.1em;
-  text-align: center;
-  line-height: 140%;
-  text-rendering: optimizeLegibility;
-  padding-bottom: 4.8rem;
-  color: $color-black;
-}
-
-h4 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
+  font-weight: 400;
   font-size: 1.6em;
   line-height: 100%;
   text-align: center;
   text-rendering: optimizeLegibility;
   padding-bottom: 1.2rem;
-  color: $color-black;
-}
-
-h5 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
-  font-size: 1.6em;
-  line-height: 150%;
-  text-align: center;
-  text-rendering: optimizeLegibility;
-  padding-bottom: 1.4rem;
-  color: $color-black;
-}
-
-h6 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
-  font-size: 1.2em;
-  line-height: 0;
-  text-align: center;
-  text-rendering: optimizeLegibility;
-  color: $color-black;
+  color: $color-lightgray;
 }
 
 p {
@@ -378,104 +214,6 @@ p {
   text-rendering: optimizeLegibility;
   padding-bottom: 2.1rem;
   color: $color-black;
-}
-
-.color_w {
-  color: $color-lightgray;
-}
-
-.color_b {
-  color: $color-black;
-}
-
-.center_txt {
-  text-align: center;
-}
-
-.left_txt {
-  text-align: left;
-}
-.right_txt {
-  text-align: right;
-}
-
-.value-txt {
-  font-size: 1.8rem;
-  padding-bottom: 1.4rem;
-}
-
-.featurestxt {
-  color: $color-lightgray;
-  font-size: 1.8rem;
-  padding-bottom: 2.4rem;
-}
-
-.question {
-  color: $color-black;
-  text-align: center;
-  font-size: 1.8em;
-}
-
-.infotxt {
-  font-size: 1.6em;
-  text-align: center;
-  margin-bottom: 3.6em;
-}
-
-.timelinetitle {
-  margin-top: 7.2rem;
-  margin-bottom: 3.6rem;
-}
-
-.version {
-  // background-color: $color-lightgray;
-  box-sizing: border-box;
-  border-bottom: 4px solid $color-black;
-  margin-bottom: 2.1rem;
-  margin-top: 2.1em;
-  padding: 16px 5px;
-  font-size: 1.4em;
-  // margin-left: auto;
-  // margin-right: auto;
-  // -webkit-box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
-  // -moz-box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
-  // box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
-  max-height: 36px;
-  max-width: 36px;
-  // border-radius: 6px;
-}
-
-.version_l{
-  margin-left: auto;
-}
-.version_r{
-  margin-right: auto;
-}
-
-.box {
-  background-color: $color-lightgray;
-  margin-top: 192px;
-  box-sizing: border-box;
-  // margin-bottom: 21px;
-  padding: 21px 21px;
-  -webkit-box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
-  -moz-box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
-  box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
-  border-radius: 6px;
-  height: 16em;
-}
-
-.roadmapinfo {
-  font-size: 1.6rem;
-  line-height: 150%;
-}
-p.roadmapinfo {
-  // margin-bottom: 1em;
-  padding-bottom: 0;
-}
-
-.roadmapbox > h4 {
-  padding-bottom: 1rem;
 }
 
 .copyright {
@@ -489,29 +227,7 @@ p.roadmapinfo {
 }
 
 //BUTTONS AND LINKS
-.ctabutton {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-  font-size: 1.8em;
-  box-sizing: border-box;
-  color: $color-black;
-	text-decoration: none;
-  cursor: pointer;
-  padding: 1.2rem 1.8rem;
-  border: none;
-  border-radius: 6px;
-  background-color: $color-blue;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  transition: all 300ms ease-in-out;
-}
-.ctabutton:hover {
-  background-color: darken($color-blue, 10%);
-}
-
 .innerlinks {
-  font-weight: 600;
   color: $color-lightgray;
   text-decoration: none;
   text-rendering: optimizeLegibility;
@@ -521,192 +237,48 @@ p.roadmapinfo {
   text-decoration: underline;
 }
 
-//FORM
-input, textarea {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  padding: 4px 6px;
-  line-height: 140%;
-  color: $color-black;
-  text-rendering: optimizeLegibility;
-}
-
-textarea:focus, input:focus {
-    outline: none;
-}
-
-form.example input[type=text] {
-  padding: 10px;
-  font-size: 1.6em;
-  border: 1px solid $color-blue;
-  border-right: none;
-  border-radius: 6px 0 0 6px;
-  float: left;
-  width: 70%;
-  background: #FAF9F6;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-form.example button {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-  float: left;
-  width: 30%;
-  padding: 10px 10px;
-  background: $color-blue;
-  color: $color-black;
-  font-size: 1.6em;
-  border-left: none;
-  border: 1px solid $color-blue;
-  border-radius: 0 6px 6px 0;
-  cursor: pointer;
-  transition: all 300ms ease-in-out;
-}
-
-form.example button:hover {
-  background-color: darken($color-blue, 10%);
-  border: 1px solid darken($color-blue, 10%);
-}
-
-form.example::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-label {
-  font-size: 1.4em;
-  // padding-left: 31px;
-}
-
-//Modal
 .btntxt {
   vertical-align: bottom;
-  padding-left: 16px;
-}
-
-.modaltitle {
-  font-size: 1.8em;
-  font-weight: 400;
-  line-height: 140%;
-  color: $color-black;
-  text-align: left;
-  padding-bottom: 0;
-}
-/* Center the image and position the close button */
-.imgcontainer {
-    position: relative;
-}
-
-.modalcontainer {
-    padding: 72px 60px 36px 60px;
-    border: none;
-}
-
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #FAF9F6;
-    margin: 10% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: none;
-    width: 450px; /* Could be more or less, depending on screen size */
-    -webkit-box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
-    -moz-box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
-    box-shadow: 3px 5px 10px 0px rgba(63,63,63,0.2);
-    border-radius: 6px;
-}
-
-/* The Close Button (x) */
-.close {
-    position: absolute;
-    right: 21px;
-    top: 8px;
-    color: $color-black;
-    font-size: 35px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: red;
-    cursor: pointer;
+  padding-left: 12px;
 }
 
 .btn {
   padding: 18px;
   border: none;
   border-radius: 4px;
-  margin: 16px auto;
-  display: block;
+  display: inline-block;
   font-size: 17px;
   line-height: 20px;
   text-decoration: none; /* remove underline from anchors */
 }
 
 .btn:hover {
-  opacity: .9;
+  // opacity: .9;
+  // text-decoration: underline;
 }
 
-/* add appropriate colors to fb, twitter and google buttons */
+label {
+  font-size: 1.4em;
+  color: $color-lightgray;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+  margin-top: 18px;
+}
+
 .fb {
-  background-color: #3B5998;
+  // background-color: #3B5998;
   color: $color-lightgray;
 }
 
 .civic {
-  background-color: #38A83B;
+  // background-color: #38A83B;
   color: $color-lightgray;
 }
 
 .uport {
-  background-color: #5C50CA;
+  // background-color: #5C50CA;
   color: $color-lightgray;
-}
-
-/* Add Zoom Animation */
-.animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-}
-@-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)}
-    to {-webkit-transform: scale(1)}
-}
-@keyframes animatezoom {
-    from {transform: scale(0)}
-    to {transform: scale(1)}
-}
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
 }
 
 //RESPONSIVE
@@ -714,48 +286,8 @@ span.psw {
   display: none;
 }
 
-@media screen and (max-width: 1214px) {
-  .displaysmall {
-    display: block;
-  }
-  .displaybig {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 1114px) {
-  .box {
-    margin-top: 134px;
-    height: 18em;
-  }
-  .toolsimage {
-    margin-top: -60px;
-  }
-}
-
-@media screen and (max-width: 888px){
-  h1 {
-    font-size: 2.8em;
-  }
-  h2 {
-    font-size: 2.1em;
-  }
-  h4 {
-    font-size: 1.4em;
-  }
-  p {
-    font-size: 1.6em;
-  }
-  .infotxt {
-    font-size: 1.4em;
-    margin-bottom: 2.1em;
-  }
-  .question {
-    font-size: 1.6em;
-  }
-  .ctabutton {
-    font-size: 1.6em;
-  }
+footer {
+  margin-top: 9em;
 }
 
 @media screen and (max-width: 786px) {
@@ -766,98 +298,55 @@ span.psw {
     margin-bottom: .8em;
   }
 }
-
-@media screen and (max-width: 748px) {
-  .box {
-    margin-top: 90px;
-    height: 20em;
-  }
-  .toolsimage {
-    margin-top: -50px;
-  }
-}
-@media screen and (max-width: 683px) {
-  .box {
-    margin-top: 130px;
-    height: 14em;
-  }
-}
-
 @media screen and (max-width: 550px) {
+  .logoicon {
+    width: 72px;
+    height: 72px;
+  }
+  .btn {
+  margin-top: 20px;
+  padding: 12px;
+  }
+  .btntxt {
+    padding-left: 8px;
+  }
+
   .hideonphone {
     display: none;
   }
   .hamburger {
     font-size: 21px;
   }
-  .logo_footer {
-    margin: 0 auto .8em auto;
-  }
-
-  .introvideo {
-    width: 100%;
-    padding-bottom: 8.6em;
-  }
-  .introduction {
-    width: 100%;
-    margin-top: 1.2em;
-  }
   .contentwrap {
     margin-top: 8em;
   }
-  .infotxt {
-    margin-bottom: 0;
+  .avatar {
+    width: 28px;
+    height: 28px;
   }
-  .question {
-    margin-top: 1.6em;
+  nav {
+    padding-left: 18px;
+    padding-right: 18px;
   }
-  footer {
-    margin-top: 6em;
-  }
-  h1 {
-    font-size: 2.1em;
-  }
-  h2 {
-    font-size: 1.8em;
-  }
-  h3 {
-    font-size: 1.8em;
-  }
-  h4 {
-    font-size: 1.4em;
-  }
-  p  {
-    font-size: 1.4em;
-  }
-  .box {
-    margin-top: 110px;
-    height: 14em;
-  }
-}
-@media screen and (max-width: 540px) {
-  .box {
-    margin-top: 90px;
-    height: 20em;
-  }
-  .madaltitle {
-    font-size: 1.8em;
-  }
-  .modal {
-    padding-top: 15px;
-  }
-  .modalcontainer {
-      padding: 60px 30px 36px 30px;
-  }
-  .modal-content {
-      width: 95%; /* Could be more or less, depending on screen size */
+  nav ul li {
+  margin-right: .1em;
   }
 }
 
-@media screen and (max-width: 395px) {
-  .box {
-    margin-top: 60px;
+@media screen and (max-width: 351px) {
+  .logoicon {
+    width: 72px;
+    height: 72px;
   }
-  .toolsimage {
-    margin-top: -30px;
+  .btn {
+  margin-top: 16px;
+  padding: 8px;
+  font-size: 1.6em;
+  }
+  .svg-icon {
+    height: 21px;
+  }
+  .btntxt {
+    padding-left: 8px;
   }
 }

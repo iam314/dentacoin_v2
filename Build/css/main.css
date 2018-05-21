@@ -322,7 +322,8 @@ table {
   background: #5CB5DD; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%; }
 
 body {
   font-family: 'Open Sans', sans-serif;
